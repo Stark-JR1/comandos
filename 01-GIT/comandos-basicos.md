@@ -1,5 +1,62 @@
 # Git e GitHub — comandos essenciais
 
+## Configuração inicial da identidade
+
+O Git precisa registrar o autor de cada commit. Na primeira utilização, configure nome e e-mail:
+
+```powershell
+git config --global user.name "Seu Nome"
+git config --global user.email "seu_email@exemplo.com"
+```
+
+Prefira usar o mesmo e-mail cadastrado no GitHub ou o endereço privado no formato `ID+usuario@users.noreply.github.com`.
+
+### Verificar a configuração
+
+```powershell
+git config --global --list
+git config user.name
+git config user.email
+```
+
+### Configurar somente no repositório atual
+
+Execute dentro da pasta do projeto, sem `--global`:
+
+```powershell
+git config user.name "Seu Nome"
+git config user.email "seu_email@exemplo.com"
+```
+
+### Erro: `user.name` e `user.email` não configurados
+
+Sintomas comuns:
+
+```text
+Verifique se você configurou "user.name" e "user.email" no git.
+```
+
+```text
+Author identity unknown
+Please tell me who you are.
+fatal: unable to auto-detect email address
+```
+
+Correção:
+
+```powershell
+git config --global user.name "Seu Nome"
+git config --global user.email "seu_email@exemplo.com"
+```
+
+Depois, repita o commit:
+
+```powershell
+git add .
+git commit -m "descrição da alteração"
+git push origin main
+```
+
 ## Conferir estado
 
 ```powershell
